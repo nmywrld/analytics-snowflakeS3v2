@@ -8,5 +8,6 @@ resource "aws_s3_bucket_notification" "new_objects_notification" {
     events        = ["s3:ObjectCreated:*"]
   }
 
-  depends_on = [aws_s3_bucket.stage_bucket_load, aws_sns_topic.snowflake_load_bucket_topic]      
+  # depends_on = [aws_s3_bucket.stage_bucket_load, aws_sns_topic.snowflake_load_bucket_topic]      
+  depends_on = [aws_sns_topic.snowflake_load_bucket_topic]      
 }

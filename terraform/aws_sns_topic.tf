@@ -29,6 +29,7 @@ data "aws_iam_policy_document" "sns_topic_policy" {
   policy_id = "__default_policy_ID"
 
   statement {
+    effect = "Allow"
     actions = [
       "SNS:Subscribe",
       "SNS:SetTopicAttributes",
@@ -50,8 +51,6 @@ data "aws_iam_policy_document" "sns_topic_policy" {
       ]
     }
 
-    effect = "Allow"
-
     principals {
       type        = "AWS"
       identifiers = ["*"]
@@ -65,10 +64,10 @@ data "aws_iam_policy_document" "sns_topic_policy" {
   }
 
   statement {
+    effect = "Allow"
     actions = [
       "SNS:Subscribe"
     ]
-    effect = "Allow"
 
     principals {
       type        = "AWS"
@@ -83,8 +82,12 @@ data "aws_iam_policy_document" "sns_topic_policy" {
   }  
 
   statement {
+    effect = "Allow"
     actions = [
       "SNS:Publish"
+    ]
+    resources = [
+      aws_sns_topic.snowflake_load_bucket_topic.arn,
     ]
 
     condition {
@@ -95,16 +98,10 @@ data "aws_iam_policy_document" "sns_topic_policy" {
       ]
     }
 
-    effect = "Allow"
-
     principals {
       type        = "Service"
       identifiers = ["s3.amazonaws.com"]
     }
-
-    resources = [
-      aws_sns_topic.snowflake_load_bucket_topic.arn,
-    ]
 
     sid = "s3-event-notifier"
   } 
