@@ -10,7 +10,6 @@ resource "snowflake_storage_integration" "integration" {
   storage_provider          = "S3"
   storage_aws_role_arn      = aws_iam_role.role_for_snowflake_load.arn  ## role is attached to the storage
   storage_allowed_locations = [
-    "s3://${local.bucket_name}/*"
+    "s3://${local.bucket_name}/"
   ]    
 }
-

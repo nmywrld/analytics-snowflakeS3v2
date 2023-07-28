@@ -13,3 +13,6 @@ terraform/terraform.tfstate.d/
 terraform/tweetid_userid_keyword_sentiments_emotions_Philippines.csv.gz
 terraform/terraform.tfstate.backup
 terraform/terraform.tfstate
+terraform/policies/
+
+assets/tweetid_userid_keyword_sentiments_emotions_Philippines.csv.gz

@@ -2,7 +2,7 @@
 
 resource "snowflake_stage" "stage_tweets" {
   name                = upper("${var.project_code}_${var.region_code}_tweets_load_stage_${terraform.workspace}")
-  url                 = "s3://${local.bucket_name}/tweets"
+  url                 = "s3://${local.bucket_name}/"
   database            = snowflake_database.db.name
   schema              = snowflake_schema.schema.name
   storage_integration = snowflake_storage_integration.integration.name

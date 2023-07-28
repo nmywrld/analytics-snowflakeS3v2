@@ -18,31 +18,31 @@ resource "aws_s3_bucket" "stage_bucket_load" {
   tags = local.default_tags
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
-  bucket = aws_s3_bucket.stage_bucket_load.bucket
+# resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
+#   bucket = aws_s3_bucket.stage_bucket_load.bucket
 
-  rule {
-    apply_server_side_encryption_by_default {
-      kms_master_key_id = aws_kms_key.mykey.arn
-      sse_algorithm     = "aws:kms"
-    }
-  }
-}
+#   rule {
+#     apply_server_side_encryption_by_default {
+#       kms_master_key_id = aws_kms_key.mykey.arn
+#       sse_algorithm     = "aws:kms"
+#     }
+#   }
+# }
 
-resource "aws_s3_bucket_ownership_controls" "this" {
-  bucket = aws_s3_bucket.stage_bucket_load.id
-  rule {
-    object_ownership = "BucketOwnerPreferred"
-  }
-}
+# resource "aws_s3_bucket_ownership_controls" "this" {
+#   bucket = aws_s3_bucket.stage_bucket_load.id
+#   rule {
+#     object_ownership = "BucketOwnerPreferred"
+#   }
+# }
 
-resource "aws_s3_bucket_acl" "this" {
-    depends_on = [aws_s3_bucket_ownership_controls.this]
+# resource "aws_s3_bucket_acl" "this" {
+#     depends_on = [aws_s3_bucket_ownership_controls.this]
 
 
-  bucket = aws_s3_bucket.stage_bucket_load.id
-  acl    = "private"
-}
+#   bucket = aws_s3_bucket.stage_bucket_load.id
+#   acl    = "private"
+# }
 
 resource "aws_s3_bucket_versioning" "this" {
   bucket = aws_s3_bucket.stage_bucket_load.id
