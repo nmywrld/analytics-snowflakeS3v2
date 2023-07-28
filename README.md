@@ -26,7 +26,11 @@
 - Prepare a dict 
   - {prefix : table name}
 - create a function to create tables
-  - for every *table name* in mappings, create a table if not created
+  - for every {table name} in mappings, create a table if not created
   - must run every time and before ingestion takes place
-- create a function to ingest and insert
-  - 
+- create a function to ingest and insert 
+  - ingests from stage 
+  - finds json keys
+  - deposit values into appropriate tables
+
+
