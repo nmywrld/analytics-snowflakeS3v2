@@ -15,4 +15,5 @@ terraform/terraform.tfstate.backup
 terraform/terraform.tfstate
 terraform/policies/
 
-assets/tweetid_userid_keyword_sentiments_emotions_Philippines.csv.gz
+assets/testData/
+assets/terraform_output.json

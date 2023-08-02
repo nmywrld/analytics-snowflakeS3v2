@@ -1,14 +1,15 @@
 
 #Create an encrypted bucket and restrict access from public
 
-resource "aws_kms_key" "mykey" {
-  description             = "This key is used to encrypt bucket objects"
-  deletion_window_in_days = 10
-}
+# resource "aws_kms_key" "mykey" {
+#   description             = "This key is used to encrypt bucket objects"
+#   deletion_window_in_days = 10
+# }
 
 
 resource "aws_s3_bucket" "stage_bucket_load" {
   bucket = local.bucket_name
+  force_destroy = true
 
 
   lifecycle {
@@ -58,5 +59,19 @@ resource "aws_s3_bucket_public_access_block" "stage_bucket_load_access_block" {
   block_public_policy = true
   ignore_public_acls = true
   restrict_public_buckets = true
+}
+
+# https://spacelift.io/blog/terraform-for-loop
+# resource "aws_s3_object" "object" {
+#   bucket = aws_s3_bucket.stage_bucket_load.id
+#   key    = "x/"
+# }
+
+resource "aws_s3_object" "prefix_create" {
+  count = "${length(local.prefix_mapping)}"
+  # bucket = local.bucket_name
+  bucket = aws_s3_bucket.stage_bucket_load.id
+  key = "${element(keys(local.prefix_mapping), count.index)}/" # lookup the key name based on the current count index.
+  # content = "${lookup(var.object_list, "${element(keys(var.object_list), count.index)}")}" # lookup the key's value based on a double interpolation.
 }
 

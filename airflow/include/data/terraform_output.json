@@ -1,0 +1,62 @@
+{
+  "s3_bucket_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:s3:::awssnowpipe-apse1-snowflake-load-dev"
+  },
+  "s3_bucket_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "awssnowpipe-apse1-snowflake-load-dev"
+  },
+  "s3_bucket_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "s3://awssnowpipe-apse1-snowflake-load-dev/"
+  },
+  "snowflake_db": {
+    "sensitive": false,
+    "type": "string",
+    "value": "AWSSNOWPIPE_APSE1_RAW_DB_DEV"
+  },
+  "snowflake_role_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:iam::574157005633:role/awssnowpipe-apse1-snowflake-role-dev"
+  },
+  "snowflake_schema": {
+    "sensitive": false,
+    "type": "string",
+    "value": "TEST"
+  },
+  "snowflake_stage": {
+    "sensitive": false,
+    "type": "string",
+    "value": "AWSSNOWPIPE_APSE1_JSON_LOAD_STAGE_DEV"
+  },
+  "snowflake_stage_integration": {
+    "sensitive": false,
+    "type": "string",
+    "value": "AWSSNOWPIPE_APSE1_S3_LOAD_INT"
+  },
+  "snowflake_storage_integration_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "AWSSNOWPIPE_APSE1_S3_LOAD_INT"
+  },
+  "sns_topic_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:sns:ap-southeast-1:574157005633:topic-awssnowpipe-apse1-snowflake-load-dev"
+  },
+  "storage_aws_external_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "DY28241_SFCRole=2_T5IZQ8JkVcHKxaBNKuh5i9MT2os="
+  },
+  "storage_aws_iam_user_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:iam::013625477128:user/140b0000-s"
+  }
+}
