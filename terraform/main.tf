@@ -26,7 +26,9 @@ locals {
     Project   = upper(var.project_code)
     ManagedBy = var.managed_by
   }
-  auth = jsondecode(file("../.auth/keys.json"))
+  # auth = jsondecode(file("../.auth/keys.json"))
+  prefix_mapping = jsondecode(file("../assets/prefix_mapping.json"))
+
 }
 
 

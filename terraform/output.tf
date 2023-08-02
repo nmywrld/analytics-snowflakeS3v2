@@ -1,3 +1,6 @@
+output "s3_bucket_url"{
+  value = "s3://${local.bucket_name}/"
+}
 
 output "s3_bucket_arn" {
   value = aws_s3_bucket.stage_bucket_load.arn
@@ -38,9 +41,10 @@ output "snowflake_schema" {
 }
 
 output "snowflake_stage" {
-  value  = snowflake_stage.stage_tweets.name
+  value  = snowflake_stage.this.name
 }
 
 output "snowflake_stage_integration" {
-  value  = snowflake_stage.stage_tweets.storage_integration
+  value  = snowflake_stage.this.storage_integration
 }
+
