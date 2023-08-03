@@ -6,11 +6,11 @@
 - use apache airflow and terraform to coordinate resources and automations from S3 bucket to snowflake
 - the main purpose is to automate the ingestion of data from a S3 bucket into snowflake, ready for analytics
 
-### [Instructions to use](https://github.com/nmywrld/analytics-snowflakeS3v2/blob/main/instructions.md)
+### [Instructions to use](https://github.com/nmywrld/analytics-snowflakeS3v2/blob/main/assets/instructions.md)
 
 ## Project requirements
 
-![Archticture](https://github.com/nmywrld/analytics-snowflakeS3v2/blob/main/snowpipeArchi.png?raw=true)
+![Archticture](https://github.com/nmywrld/analytics-snowflakeS3v2/blob/main/assets/snowpipeArchi.png)
 
 ### Phase 1: Build Components
 
