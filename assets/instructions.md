@@ -92,7 +92,7 @@
    - login with default login (user:"admin", pw:"admin")
    - at the top ribbon, click the path: Admin > Connections
    - fill in the fields as per the below image; BUT leave the "extra" and "warehouse" field empty
-    ![snowflake_con](snowflake_connection.png)
+    ![Archticture](https://github.com/nmywrld/analytics-snowflakeS3v2/blob/main/assets/snowflake_connection.png?raw=true)
    - using the value from "snowflake_db" and "snowflake_schema" inside terraform_output.json, fill in the respective fields accordingly
    - save connection and refresh dag page 
 6. click the slider to turn on the dag and youre ready to ingest data 
