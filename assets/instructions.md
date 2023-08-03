@@ -76,11 +76,11 @@
       - terraform apply
    6. now you need to configure the permissions
       - inside your terminal, find "storage_aws_external_id"
-        - copy the value and paste it as the value for "snowflake_account_arn" inside terraform.tfvars
-      - inside your terminal, find "storage_aws_iam_user_arn"
         - copy the value and paste it as the value for "snowflake_external_id" inside terraform.tfvars
+      - inside your terminal, find "storage_aws_iam_user_arn"
+        - copy the value and paste it as the value for "snowflake_account_arn" inside terraform.tfvars
       - run "terraform apply" again
-      - **the cloud resources are now up and running**
+      - ***the cloud resources are now up and running***
    7. now you need to set up your airflow environment with the information needed
       - run "terraform output -json > ../assets/terraform_output.json"
       - run "terraform output -json > ../airflow/include/data/terraform_output.json"
