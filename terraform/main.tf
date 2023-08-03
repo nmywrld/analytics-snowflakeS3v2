@@ -10,11 +10,6 @@ terraform {
       source  = "Snowflake-Labs/snowflake"
       version = "~> 0.55.0"
     }
-
-    # snowflake = {
-    #   source  = "chanzuckerberg/snowflake"
-    #   version = "0.25.18"
-    # }    
   }   
   required_version = ">= 1.1"
 }
@@ -26,7 +21,6 @@ locals {
     Project   = upper(var.project_code)
     ManagedBy = var.managed_by
   }
-  # auth = jsondecode(file("../.auth/keys.json"))
   prefix_mapping = jsondecode(file("../assets/prefix_mapping.json"))
 
 }

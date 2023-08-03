@@ -4,6 +4,9 @@
 
 - scope the data requirements to build our e-commerce analytics platform (link to git project)
 - use apache airflow and terraform to coordinate resources and automations from S3 bucket to snowflake
+- the main purpose is to automate the ingestion of data from a S3 bucket into snowflake, ready for analytics
+
+### [Instructions to use](../assets/instructions.md)
 
 ## Project requirements
 
@@ -21,6 +24,11 @@
 - A storage integration allows users to load or unload data from an external stage without supplying credentials. It generates an IAM user that is granted the required permissions to access resources in AWS.
 - The database and the corresponding schema that is to be created is where the external stage and destination table are going to be placed.
 - An external stage references a cloud storage location outside of Snowflake. In this example, the external stage is mapped to an S3 bucket.
+- create tables required using mappings
+- reason for building all assets within terraform 
+  - terraform is flexible enough to provision and attach the right permissions to the appropriate resource.
+  - central management of permissions and resources
+  - can be integrated with CI/CD pipelines.
 
 ### Phase 3: Build Airflow Dag
 - Prepare a dict 
@@ -32,5 +40,3 @@
   - ingests from stage 
   - finds json keys
   - deposit values into appropriate tables
-
-
