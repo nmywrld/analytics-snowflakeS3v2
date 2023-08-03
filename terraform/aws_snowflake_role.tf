@@ -29,13 +29,13 @@ data "aws_iam_policy_document" "snowflake_integration" {
   }
 }
 
-data "template_file" "snowflake_load_policy_template" {
-  template = "${file("./policies/snowflake_load_policy.json")}"
-  vars = {
-    bucket_name = local.bucket_name
-    # kms_arn = "${aws_s3_bucket_server_side_encryption_configuration.this}"
-  }
-}
+# data "template_file" "snowflake_load_policy_template" {
+#   template = "${file("./policies/snowflake_load_policy.json")}"
+#   vars = {
+#     bucket_name = local.bucket_name
+#     # kms_arn = "${aws_s3_bucket_server_side_encryption_configuration.this}"
+#   }
+# }
 
 resource "aws_iam_policy" "snowflake_load_policy" {
   name        = "${local.prefix}-snowflake-access-${terraform.workspace}"
@@ -68,13 +68,13 @@ data "aws_iam_policy_document" "snowflake_assume_role" {
   }
 }
 
-data "template_file" "snowflake_load_trust_policy_template" {
-  template = "${file("./policies/snowflake_load_trust_policy.json")}"
-  vars = {
-    snowflake_account_arn = "${var.snowflake_account_arn}"
-    snowflake_external_id = "${var.snowflake_external_id}"
-  }
-}
+# data "template_file" "snowflake_load_trust_policy_template" {
+#   template = "${file("./policies/snowflake_load_trust_policy.json")}"
+#   vars = {
+#     snowflake_account_arn = "${var.snowflake_account_arn}"
+#     snowflake_external_id = "${var.snowflake_external_id}"
+#   }
+# }
 
 resource "aws_iam_role" "role_for_snowflake_load" {
   name = "${local.prefix}-snowflake-role-${terraform.workspace}"

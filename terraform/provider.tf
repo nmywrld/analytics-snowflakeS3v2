@@ -1,11 +1,4 @@
 provider "aws" {
-#   profile = var.aws_profile
-#   region  = var.aws_region
-
-#   region     = "${local.auth.aws.region}"
-#   access_key = "${local.auth.aws.accessKey}"
-#   secret_key = "${local.auth.aws.secretKey}" 
-
   shared_credentials_files = ["../.auth/credentials"]
   shared_config_files      = ["../.auth/config"]
   profile                  = "default"
